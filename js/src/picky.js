@@ -249,6 +249,7 @@
 					if(!container[i].hasClass('active')) {
 						$('.picky__container').removeClass('active');
 						container[i].addClass('active');
+						$('input').blur();
 					}
 					else {
 						container[i].removeClass('active');
