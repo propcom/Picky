@@ -269,10 +269,7 @@
 				}
 
 				if(cell.hasClass('disabled')) {
-
-					mod.dates.populate(date.getMonth(), date.getFullYear());
 					return;
-
 				}
 
 				mod.dates.setValues(cell, date);
