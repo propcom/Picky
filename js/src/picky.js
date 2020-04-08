@@ -628,7 +628,7 @@
 					+ "-" + (date.full.getMonth() + 1).toString().padStart(2, "0")
 					+ "-" + date.full.getDate().toString().padStart(2, "0");
 
-				if (array.indexOf(dateString) === -1 || a.full > disableAfter) {
+				if (array.indexOf(dateString) === -1 || date.full > disableAfter) {
 					cell.addClass("disabled")
 				} else {
 					cell.removeClass("disabled")
