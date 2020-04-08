@@ -563,7 +563,7 @@
 						cell.addClass('active');
 
 					}
-					
+
 					cell.data('date', data.days[i]);
 					cell.text(data.days[i].getDate());
 
@@ -594,7 +594,7 @@
 
 				if(Array.isArray(options.enable)) {
 
-					mod.dates.manageDates(date, cell, 'enable');
+					mod.dates.manageSingleDate(date, cell, disableAfter, 'enable');
 
 				} else {
 
@@ -620,6 +620,19 @@
 
 				mod.dates.disableDOW(date, cell);
 
+			};
+
+			this.manageSingleDate = function(date, cell, disableAfter, func) {
+				var array = func === 'disable' ? options.disable : options.enable;
+				var dateString = date.full.getFullYear()
+					+ "-" + (date.full.getMonth() + 1).toString().padStart(2, "0")
+					+ "-" + date.full.getDate().toString().padStart(2, "0");
+
+				if (array.indexOf(dateString) === -1 || a.full > disableAfter) {
+					cell.addClass("disabled")
+				} else {
+					cell.removeClass("disabled")
+				}
 			};
 
 			this.manageDates = function(date, cell, func) {
@@ -888,5 +901,4 @@
 		};
 
 	};
-
 })();
