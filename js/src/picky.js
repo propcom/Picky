@@ -222,6 +222,13 @@
 					mod.dates.draw();
 				}
 
+			},
+
+			updateOption: function(data) {
+				var _data = data || {};
+				if (options[_data.optionName] && typeof _data.value === typeof options[_data.optionName]) {
+					options[_data.optionName] = _data.value;
+				}
 			}
 
 		};
